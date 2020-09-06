@@ -1,12 +1,20 @@
-﻿// 2D curve.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
-//
+﻿
+//для контроля утеечк памяти______________
+
+#define __CRTDBG_MAP_ALLOC
+#include <crtdbg.h>
+#define DEBUG_NEW new(_NORMAL_BLOCK, __FILE__, __LINE__)
+#define new DEBUG_NEW
+//_________________________________________________
+
+
+
 
 #include <iostream>
 #include "2D curve.h"
 #include <vector>
 #include <cstdlib>
 #include <ctime>
-#include <algorithm>
 using namespace std;
 
 double getRandomNumber(int min, int max);
@@ -14,53 +22,73 @@ double getRandomNumber(int min, int max);
 int main()
 {
 	setlocale(LC_CTYPE, "Russian");
-	//заполнение вектора указателями на объекты
 	srand(static_cast<unsigned int>(time(0)));
 	int size = 5;//размер вектора
-
 	vector<Figure *> vec;
+
+
+	//заполнение вектора указателями на объекты---------------
 	for (int i = 0; i < size; i++)
 	{
 		if ((int)getRandomNumber(0, 5) % 2 == 0)
-			vec.push_back(new circle(getRandomNumber(0, 3254625)));
+			vec.push_back(new circle(getRandomNumber(0, 8)));
 		else
-			vec.push_back(new elips(getRandomNumber(0, 3254625), getRandomNumber(0, 3254625)));
+			vec.push_back(new elips(getRandomNumber(0, 7), getRandomNumber(0, 6)));
 
 	}
 
-	// создадим массив площадей
-	vector <double> array;
-	for (int i = 0; i < size; i++)
-		array[i] = vec[i]->CalculateArea();
+	cout << " площади созданных фигур " << endl;
 
-	//отсортируем вектор указателей на объекты по возрастанию площадей
-	Figure* temp;
+
+	// создадим массив площадей------------------
+	vector <double> array(size);
+	for (int i = 0; i < size; i++)
+	{
+		array[i] = vec[i]->CalculateArea();
+		vec[i]->printNAME();
+		cout << "площадь " << vec[i]->CalculateArea() << "\n";
+
+	}
+
+
+	//отсортируем вектор указателей на объекты по возрастанию площадей-------------------
+	cout << "\n" << "кривые по возрастанию площадей" << "\n";
+	double temp;
 	for (int i = 0; i < size; i++)
 		for (int j = 0; j < size - i - 1; j++)
 		{
 			if (array[j] > array[j + 1])
 			{
-				temp = vec[j];
-				vec[j] = vec[j + 1];
-				vec[j + 1] = temp;
+				temp = array[j];
+				array[j] = array[j + 1];
+				array[j + 1] = temp;
 			}
 		}
 
-	//вычисляем площадь всех фигур(в пункте 4 не понятно сформулировано каких именно)
+	for (int i = 0; i < size; i++)
+		for (int j = 0; j < size; j++)
+		{
+			if (array[i] == vec[j]->CalculateArea())
+			{
+				cout << "площадь: " << vec[j]->CalculateArea();
+				vec[j]->printNAME();
+				break;
+			}
+			
+		}
+
+
+	//вычисляем площадь всех фигур(в пункте 4 не понятно сформулировано каких именно)----------------------------
 
 	double Ssum = 0;
 
 	for (int i = 0; i < size; i++)
+	{
 		Ssum += array[i];
+	}
+	cout << "\n" << "площадь всех фигур " << Ssum << endl;
 
-
-
-	//осталось проверить на деле
-
-
-
-
-
+	_CrtDumpMemoryLeaks(); //контроль утечек памяти
 
 	return 0;
 }
@@ -73,13 +101,3 @@ double getRandomNumber(int min, int max)
 	return static_cast<double>(rand() * fraction * (max - min + 1) + min);
 }
 
-// Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
-// Отладка программы: F5 или меню "Отладка" > "Запустить отладку"
-
-// Советы по началу работы 
-//   1. В окне обозревателя решений можно добавлять файлы и управлять ими.
-//   2. В окне Team Explorer можно подключиться к системе управления версиями.
-//   3. В окне "Выходные данные" можно просматривать выходные данные сборки и другие сообщения.
-//   4. В окне "Список ошибок" можно просматривать ошибки.
-//   5. Последовательно выберите пункты меню "Проект" > "Добавить новый элемент", чтобы создать файлы кода, или "Проект" > "Добавить существующий элемент", чтобы добавить в проект существующие файлы кода.
-//   6. Чтобы снова открыть этот проект позже, выберите пункты меню "Файл" > "Открыть" > "Проект" и выберите SLN-файл.

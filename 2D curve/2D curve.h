@@ -1,5 +1,5 @@
 #pragma once
-
+#include <string>
 #include <iostream>
 
 #define PI 3.1417
@@ -11,8 +11,9 @@ class Figure
 {
 public:
 	virtual double CalculateArea() = 0;      //Вычисление площади
-	//virtual void Print(const char* name) = 0;  //Вывод информации о фигуре
+	virtual void printNAME() = 0;  //Вывод информации о фигуре
 };
+
 
 //класс элипса
 class elips : public Figure
@@ -22,10 +23,12 @@ public:
 	elips(double a_, double b_) : a(a_), b(b_){ }
 
 	double CalculateArea(); //Вычисление площади
-
+	void printNAME(); //Вывод названия (информации)
 private:
 	double a, b; // Длины полуосей
+	const char name[8] =  " элипс ";
 };
+
 
 //класс окружности 
 class circle : public Figure
@@ -37,12 +40,12 @@ class circle : public Figure
 
 		double CalculateArea(); //Вычисление площади
 
-		//void Print(const char* name); //Вывод информации о фигуре
+		void printNAME(); //Вывод информации о фигуре
 
 
 	private:
 		double r; //Радиус окружности
-
+		const char name1[13] = " окружность ";
 
 
 };
