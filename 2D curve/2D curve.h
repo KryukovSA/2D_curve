@@ -22,9 +22,13 @@ public:
 class elips : public Figure
 {
 public:
-	elips(double a_, double b_) : a(a_), b(b_){ }
-	double CalculateArea(); 
-	void printNAME(); 
+	elips(double a_, double b_) : a(a_), b(b_){ 
+		if (a_ < 0 || b_ < 0) {
+			throw std::runtime_error("semiaxis is a positive number");
+		}
+	}
+	double CalculateArea() override;
+	void printNAME() override;
 	~elips() override;
 private:
 	double a, b; 
@@ -37,9 +41,13 @@ class circle : public Figure
 {
 	
 	public:
-		circle(double r_) : r(r_) { }
-		double CalculateArea(); 
-		void printNAME(); 
+		circle(double r_) : r(r_) { 
+			if (r_ < 0) {
+				throw std::runtime_error("radius is a positive number");
+			}
+		}
+		double CalculateArea() override;
+		void printNAME() override;
 		~circle() override;
 	private:
 		double r; //Радиус окружности
