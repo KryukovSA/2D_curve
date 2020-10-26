@@ -1,6 +1,8 @@
 #pragma once
 #include <string>
 #include <iostream>
+#include <vector>
+#include <ctime>
 
 #define PI 3.1417
 
@@ -12,6 +14,7 @@ class Figure
 public:
 	virtual double CalculateArea() = 0;      //Вычисление площади
 	virtual void printNAME() = 0;  //Вывод информации о фигуре
+	virtual ~Figure() {};
 };
 
 
@@ -19,13 +22,12 @@ public:
 class elips : public Figure
 {
 public:
-	//инициализатор
 	elips(double a_, double b_) : a(a_), b(b_){ }
-
-	double CalculateArea(); //Вычисление площади
-	void printNAME(); //Вывод названия (информации)
+	double CalculateArea(); 
+	void printNAME(); 
+	~elips() override;
 private:
-	double a, b; // Длины полуосей
+	double a, b; 
 	const char name[8] =  " элипс ";
 };
 
@@ -35,14 +37,10 @@ class circle : public Figure
 {
 	
 	public:
-		//инициализатор
 		circle(double r_) : r(r_) { }
-
-		double CalculateArea(); //Вычисление площади
-
-		void printNAME(); //Вывод информации о фигуре
-
-
+		double CalculateArea(); 
+		void printNAME(); 
+		~circle() override;
 	private:
 		double r; //Радиус окружности
 		const char name1[13] = " окружность ";
@@ -50,3 +48,6 @@ class circle : public Figure
 
 };
 
+double getRandomNumber(int min, int max);
+void sortArea(vector<double>&array);
+double area_all_figures(vector<double>&array);
