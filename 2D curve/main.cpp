@@ -6,9 +6,10 @@
 
 int main()
 {
+	system("chcp 1251");
 	setlocale(LC_CTYPE, "Russian");
 	srand(static_cast<unsigned int>(time(0)));
-	int size = 5;//размер вектора
+	int size = 6;//размер вектора
 	double t = PI / 4;
 
 	//2-------------------------------------
@@ -23,7 +24,7 @@ int main()
 		else
 			vec.push_back(new spiral(getRandomNumber(0, 6), getRandomNumber(0, 6)));
 	}
-	size = 7;
+	size += 2;
 	vec.push_back(new circle(getRandomNumber(0, 8)));
 	vec.push_back(new circle(getRandomNumber(0, 8)));
 

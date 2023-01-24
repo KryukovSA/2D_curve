@@ -44,7 +44,7 @@ vector<double> circle::get_coordinates(double t) {
 	double y = 0;
 	x = r * cos(t);
 	y = r * sin(t);
-	return { x, y };
+	return { x, y, 0 };
 }
 
 vector<double> elips::get_coordinates(double t) {
@@ -52,7 +52,7 @@ vector<double> elips::get_coordinates(double t) {
 	double y = 0;
 	x = a * cos(t);
 	y = b * sin(t);
-	return { x, y };
+	return { x, y, 0 };
 }
 
 vector<double> spiral::get_coordinates(double t) {
@@ -64,9 +64,6 @@ vector<double> spiral::get_coordinates(double t) {
 	z = step * t;
 	return { x, y, z };
 }
-
-
-
 
 elips::~elips(){}
 circle::~circle(){}
