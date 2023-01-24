@@ -1,4 +1,6 @@
-﻿  main.cpp
-C:\Users\serge\OneDrive\Desktop\job\cad_curve\2D_curve\2D curve\main.cpp(29,20): warning C4018: <: несоответствие типов со знаком и без знака
-main.obj : error LNK2005: "bool __cdecl operator<(class circle const &,class circle const &)" (??M@YA_NABVcircle@@0@Z) уже определен в 2D curve.obj
-C:\Users\serge\OneDrive\Desktop\job\cad_curve\2D_curve\Debug\2D curve.exe : fatal error LNK1169: обнаружен многократно определенный символ - один или более
+﻿  2D curve.cpp
+C:\Users\serge\OneDrive\Desktop\job\cad_curve\2D_curve\2D curve\2D curve.cpp(84,20): warning C4018: <: несоответствие типов со знаком и без знака
+  main.cpp
+C:\Users\serge\OneDrive\Desktop\job\cad_curve\2D_curve\2D curve\main.cpp(56,20): warning C4018: <: несоответствие типов со знаком и без знака
+  Создание кода...
+  2D curve.vcxproj -> C:\Users\serge\OneDrive\Desktop\job\cad_curve\2D_curve\Debug\2D curve.exe

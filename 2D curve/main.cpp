@@ -1,4 +1,5 @@
-﻿#include "2D curve.h"
+﻿//#include "2D curve.h"
+#include "DLL_curve.h"
 #include <cstdlib>
 #include <algorithm>
 #include <typeinfo>
@@ -6,7 +7,6 @@
 
 int main()
 {
-	system("chcp 1251");
 	setlocale(LC_CTYPE, "Russian");
 	srand(static_cast<unsigned int>(time(0)));
 	int size = 6;//размер вектора
