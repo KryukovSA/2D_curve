@@ -1,0 +1,10 @@
+﻿  2D curve.cpp
+C:\Users\serge\OneDrive\Desktop\job\cad_curve\2D_curve\2D curve\2D curve.cpp(86,20): warning C4018: <: несоответствие типов со знаком и без знака
+  main.cpp
+C:\Users\serge\OneDrive\Desktop\job\cad_curve\2D_curve\2D curve\main.cpp(55,20): warning C4018: <: несоответствие типов со знаком и без знака
+  Создание кода
+  6 of 248 functions ( 2.4%) were compiled, the rest were copied from previous compilation.
+    1 functions were new in current compilation
+    9 functions had inline decision re-evaluated but remain unchanged
+  Создание кода завершено
+  2D curve.vcxproj -> C:\Users\serge\OneDrive\Desktop\job\cad_curve\2D_curve\Release\2D curve.exe
