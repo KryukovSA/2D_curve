@@ -1,0 +1,6 @@
+﻿  pch.cpp
+  dllmain.cpp
+  DLL_curve.cpp
+C:\Users\serge\OneDrive\Desktop\job\cad_curve\2D_curve\Dll_curve\Dll_curve\DLL_curve.cpp(84,20): warning C4018: <: несоответствие типов со знаком и без знака
+  Создание кода...
+  Dll_curve.vcxproj -> C:\Users\serge\OneDrive\Desktop\job\cad_curve\2D_curve\Dll_curve\Debug\Dll_curve.lib

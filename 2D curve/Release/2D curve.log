@@ -1,7 +1,1 @@
-﻿  main.cpp
-C:\Users\serge\OneDrive\Desktop\job\cad_curve\2D_curve\2D curve\main.cpp(56,20): warning C4018: <: несоответствие типов со знаком и без знака
-  Создание кода
-  Previous IPDB and IOBJ mismatch, fall back to full compilation.
-  All 248 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
-  Создание кода завершено
-  2D curve.vcxproj -> C:\Users\serge\OneDrive\Desktop\job\cad_curve\2D_curve\Release\2D curve.exe
+﻿LINK : fatal error LNK1181: не удается открыть входной файл "Dll_curve.lib"

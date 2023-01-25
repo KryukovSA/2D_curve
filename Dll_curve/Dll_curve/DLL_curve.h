@@ -1,3 +1,4 @@
+п»ї#pragma once
 #ifdef DLL_CURVE_EXPORTS
 #define DLL_CURVE_API __declspec(dllexport) 
 #else
@@ -11,18 +12,18 @@
 
 using namespace std;
 
-//базовый абстрактый класс
+//Р±Р°Р·РѕРІС‹Р№ Р°Р±СЃС‚СЂР°РєС‚С‹Р№ РєР»Р°СЃСЃ
 class Figure
 {
 public:
 	virtual vector<double> get_first_derivative(double t) = 0;
 	virtual vector<double> get_coordinates(double t) = 0;
-	virtual void printNAME() = 0;  //Вывод информации о фигуре
+	virtual void printNAME() = 0;  //Р’С‹РІРѕРґ РёРЅС„РѕСЂРјР°С†РёРё Рѕ С„РёРіСѓСЂРµ
 	virtual ~Figure() {};
 };
 
 
-//класс элипса
+//РєР»Р°СЃСЃ СЌР»РёРїСЃР°
 class elips : public Figure
 {
 public:
@@ -37,11 +38,11 @@ public:
 	~elips() override;
 private:
 	double a, b;
-	string name = " элипс ";
+	string name = " СЌР»РёРїСЃ ";
 };
 
 
-//класс окружности 
+//РєР»Р°СЃСЃ РѕРєСЂСѓР¶РЅРѕСЃС‚Рё 
 class circle : public Figure
 {
 
@@ -57,8 +58,8 @@ public:
 	void printNAME() override;
 	~circle() override;
 private:
-	double r; //Радиус окружности
-	string name = " окружность ";
+	double r; //Р Р°РґРёСѓСЃ РѕРєСЂСѓР¶РЅРѕСЃС‚Рё
+	string name = " РѕРєСЂСѓР¶РЅРѕСЃС‚СЊ ";
 };
 
 class spiral : public Figure {
@@ -76,9 +77,9 @@ public:
 	void printNAME() override;
 	~spiral() override;
 private:
-	double r; //Радиус спирали
-	double step; //Шаг
-	string name = " спираль ";
+	double r; //Р Р°РґРёСѓСЃ СЃРїРёСЂР°Р»Рё
+	double step; //РЁР°Рі
+	string name = " СЃРїРёСЂР°Р»СЊ ";
 };
 
 double getRandomNumber(int min, int max);
